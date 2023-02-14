@@ -23,6 +23,7 @@ const bars = container
     .attr('y', data => yScale(data.value));
 
 // Why use selectAll('.bar') even if we haven't created a container yet?
+// To make sure that we can do operations like these later and D3 knows which bars we're referring to
 setTimeout(() => {
     bars.data(DUMMY_DATA.slice(0, 2)) // Set a new value for our bars data to be only the first 2 points of the original DUMMY DATA
     .exit() // Gives me the elements for which the data is not there anymore
